@@ -1,7 +1,5 @@
 package bmw.aoc
 
-import java.io.File
-
 fun main(args: Array<String>) {
     println("Solution Part 1: " + chooseNumbersTwoEntries(readInputFile("src/main/resources/day1-input")))
     println("Solution Part 2: " + chooseNumbersThreeEntries(readInputFile("src/main/resources/day1-input")))
@@ -24,4 +22,4 @@ fun chooseNumbersThreeEntries(listOfAllNumbers: List<String>): Int {
         .let { it.first * it.second * it.third}
 }
 
-fun readInputFile(fileName: String): List<String> = File(fileName).readLines()
+//fun readInputFile(fileName: String): List<String> = File(fileName).readLines()
