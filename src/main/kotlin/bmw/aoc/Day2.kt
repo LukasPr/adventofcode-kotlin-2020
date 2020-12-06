@@ -7,13 +7,11 @@ fun main() {
 }
 
 fun findNumberOfValidPasswords(passwordPolicyWithPasswords: List<String>): Int {
-
     var validPwds = passwordPolicyWithPasswords.size
     val cleanList = passwordPolicyWithPasswords
         .map { it.split(" ") }
         .map { it -> it.flatMap { it.split("-") } }
         .map { it -> it.map { it.replace(":", "") } }
-
 
     for (item in cleanList) {
         val min = item[0].toInt()

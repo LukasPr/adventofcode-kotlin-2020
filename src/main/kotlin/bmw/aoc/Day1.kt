@@ -8,8 +8,7 @@ fun main(args: Array<String>) {
 fun chooseNumbersTwoEntries(listOfAllNumbers: List<String>): Int {
     val inputList = listOfAllNumbers.map { it.toInt() }
     return inputList
-        .flatMap { i
-            -> inputList.map { j -> Pair(i, j) } }
+        .flatMap { i -> inputList.map { j -> Pair(i, j) } }
         .first { it.first + it.second == 2020 }
         .let { it.first * it.second }
 }

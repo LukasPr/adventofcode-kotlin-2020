@@ -2,18 +2,17 @@ package bmw.aoc
 
 fun main() {
     println(readInputFile("src/main/resources/day3-input"))
-    println(slope(readInputFile("src/main/resources/day3-input"), 3, 1))
-    println(slopeMultipleSlopes(listOf(11, 31, 51, 71, 12), readInputFile("src/main/resources/day3-input")))
+    println(countTreesOnTheWay(readInputFile("src/main/resources/day3-input"), 3, 1))
+    println(multiplyTreesOnMulipleSlopes(listOf(11, 31, 51, 71, 12), readInputFile("src/main/resources/day3-input")))
 }
 
 //fun determineNumberOfTrees(inputFile: List<String>, right: Int, down: Int): Int {
-//    var trees = 0
 //    return inputFile.mapIndexed { column, row ->
-//        if()
+//        Todo solve this in a functional way
 //    }
 //}
 
-fun slope(lines: List<String>, right: Int, down: Int): Long {
+fun countTreesOnTheWay(lines: List<String>, right: Int, down: Int): Long {
     var (y, x, rows, columns) = arrayOf(
         0,
         0,
@@ -32,9 +31,9 @@ fun slope(lines: List<String>, right: Int, down: Int): Long {
     return trees
 }
 
-fun slopeMultipleSlopes(inputOfSlopes: List<Int>, lines: List<String>): Long {
+fun multiplyTreesOnMulipleSlopes(inputOfSlopes: List<Int>, lines: List<String>): Long {
     return inputOfSlopes
-        .map { slope(lines, it / 10, it % 10) }.reduce { acc, l -> acc * l }
+        .map { countTreesOnTheWay(lines, it / 10, it % 10) }.reduce { acc, l -> acc * l }
 }
 
 
